@@ -35,6 +35,7 @@ Thermostat.prototype.resetTemperature = function () {
 };
 
 Thermostat.prototype.changeColor = function () {
+
     if (this.temperature < 18) {
       return 'low';
     }
@@ -45,6 +46,8 @@ Thermostat.prototype.changeColor = function () {
       return 'high';
     };
 };
+
+
 
 // Thermostat.prototype.color = function() {
 //   if (this.temperature <= 18);

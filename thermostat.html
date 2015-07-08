@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>Thermostat</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="src/Thermostat.js"></script>
     <link rel="stylesheet" href="style/main.css">
   </head>
@@ -12,12 +13,14 @@
 
     <h1>Welcome to Thermostat</h1>
     <div>
-    <p id="temperature" class="medium"></p></div><br>
-    <button  onclick="decreaseTemperature();">down</button>
-    <button  onclick="increaseTemperature();">up</button>
-    <input type="checkbox" onclick="changePowerState();" checked>
+    <p id="temperature" class="medium colour"></p></div><br>
+    <button id="decreaseTemperatureButton" class="changeColour">down</button>
+    <button id="increaseTemperatureButton" class="changeColour">up</button>
+    <input type="checkbox" id="changePowerStateCheckbox" checked>
     Turn Power Save ON/OFF</br>
-    <button onclick="restartThermostat();">reset</button>
+    <button id="restartThermostatButton">reset</button>
     <script src="src/thermoController.js"></script>
   </body>
 </html>
+
+

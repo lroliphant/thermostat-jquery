@@ -2,17 +2,26 @@ var thermostat = new Thermostat;
 
 document.getElementById("temperature").innerHTML = (thermostat.temperature);
 
+$("#increaseTemperatureButton").on("click", increaseTemperature);
+$("#decreaseTemperatureButton").on("click", decreaseTemperature);
+$("#changePowerStateCheckbox").on("click", changePowerState);
+$("#restartThermostatButton").on("click", restartThermostat);
+
+$("button.changeColour").on("click", energyUse);
+
 function increaseTemperature() {
   thermostat.increase();
-  energyUse();
+  // energyUse();
   showTemperature();
 };
 
 function decreaseTemperature(){
   thermostat.decrease();
-  energyUse();
+  // energyUse();
   showTemperature();
 };
+
+
 function changePowerState() {
   if (thermostat.powerSave === true) {
     thermostat.powerSaveOff();
@@ -28,18 +37,24 @@ function restartThermostat() {
 };
 
 function showTemperature() { 
-  energyUse();
+  // energyUse();
   document.getElementById("temperature").innerHTML = (thermostat.temperature);
 };
 
 function energyUse() {
+  if(thermostat.changeColor() === 'high') {
+    $('.colour').addClass("high")
+  }
+  if( thermostat.changeColor() === 'medium') {
+    $('.colour').addClass("medium")
+  }
   if( thermostat.changeColor() === 'low') {
-    document.getElementById('temperature').className = 'low'
-  }
-  else if( thermostat.changeColor() === 'medium') {
-    document.getElementById('temperature').className = 'medium'
-  }
-  else if( thermostat.changeColor() === 'high') {
-    document.getElementById('temperature').className = 'high'
-  }
+    $('.colour').addClass("low")
+  };
 };
+
+// function energyUse() {
+//   $('#temperature').switchClass( $('#temperature').attr('class'), thermostat.changeColor()) ()
+// };
+
+
