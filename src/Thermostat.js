@@ -36,13 +36,13 @@ Thermostat.prototype.resetTemperature = function () {
 
 Thermostat.prototype.changeColor = function () {
     if (this.temperature < 18) {
-      return 'green';
+      return 'low';
     }
     else if (this.temperature < 25) {
-      return 'yellow';
+      return 'medium';
     }
     else {
-      return 'red';
+      return 'high';
     };
 };
 

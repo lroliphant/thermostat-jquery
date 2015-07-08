@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <title>Thermostat</title>
     <script src="src/Thermostat.js"></script>
-    
+    <link rel="stylesheet" href="style/main.css">
   </head>
 
   <body>
 
     <h1>Welcome to Thermostat</h1>
     <div>
-    <font id="temperature" color="getColor();"></font></div><br>
-    <button  onclick="increaseTemperature();">up</button>
+    <p id="temperature" class="medium"></p></div><br>
     <button  onclick="decreaseTemperature();">down</button>
+    <button  onclick="increaseTemperature();">up</button>
     <input type="checkbox" onclick="changePowerState();" checked>
     Turn Power Save ON/OFF</br>
     <button onclick="restartThermostat();">reset</button>
